@@ -1564,6 +1564,7 @@ Other Style Guides
 ## Properties
 
   <a name="properties--dot"></a><a name="12.1"></a>
+  - [12.1](#properties--dot) 使用点语法访问属性。eslint: [`dot-notation`](https://eslint.org/docs/rules/dot-notation.html)
   - [12.1](#properties--dot) Use dot notation when accessing properties. eslint: [`dot-notation`](https://eslint.org/docs/rules/dot-notation.html)
 
     ```javascript
@@ -1580,6 +1581,7 @@ Other Style Guides
     ```
 
   <a name="properties--bracket"></a><a name="12.2"></a>
+  - [12.2](#properties--bracket) 使用变量访问属性时，请使用中括号 `[]` 语法。
   - [12.2](#properties--bracket) Use bracket notation `[]` when accessing properties with a variable.
 
     ```javascript
@@ -1595,6 +1597,7 @@ Other Style Guides
     const isJedi = getProp('jedi');
     ```
   <a name="es2016-properties--exponentiation-operator"></a>
+  - [12.3](#es2016-properties--exponentiation-operator) 运算指数时，请使用指数运算符 `**` 。eslint: [`no-restricted-properties`](https://eslint.org/docs/rules/no-restricted-properties).
   - [12.3](#es2016-properties--exponentiation-operator) Use exponentiation operator `**` when calculating exponentiations. eslint: [`no-restricted-properties`](https://eslint.org/docs/rules/no-restricted-properties).
 
     ```javascript
