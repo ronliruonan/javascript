@@ -1613,6 +1613,7 @@ Other Style Guides
 ## Variables
 
   <a name="variables--const"></a><a name="13.1"></a>
+  - [13.1](#variables--const) 始终使用 `const` or `let` 来声明变量。不要对全局变量这样做。我们希望避免污染全局命名空间。...地球超人警告我们注意它们。eslint: [`no-undef`](https://eslint.org/docs/rules/no-undef) [`prefer-const`](https://eslint.org/docs/rules/prefer-const)
   - [13.1](#variables--const) Always use `const` or `let` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that. eslint: [`no-undef`](https://eslint.org/docs/rules/no-undef) [`prefer-const`](https://eslint.org/docs/rules/prefer-const)
 
     ```javascript
@@ -1624,8 +1625,10 @@ Other Style Guides
     ```
 
   <a name="variables--one-const"></a><a name="13.2"></a>
+  - [13.2](#variables--one-const) 使用一个`const` or `let` 来声明每一个变量/或任务。eslint: [`one-var`](https://eslint.org/docs/rules/one-var.html)
   - [13.2](#variables--one-const) Use one `const` or `let` declaration per variable or assignment. eslint: [`one-var`](https://eslint.org/docs/rules/one-var.html)
 
+    > Why? 这种方式更容易添加一个新的变量声明，并且你永远不会担心将 `;` 敲成 `,` 或者引入唯一标点的差异。你也可以对每个变量进行调试，避免一次性跳过他们。
     > Why? It’s easier to add new variable declarations this way, and you never have to worry about swapping out a `;` for a `,` or introducing punctuation-only diffs. You can also step through each declaration with the debugger, instead of jumping through all of them at once.
 
     ```javascript
@@ -1647,8 +1650,10 @@ Other Style Guides
     ```
 
   <a name="variables--const-let-group"></a><a name="13.3"></a>
+  - [13.3](#variables--const-let-group) 先将 `const` 组织到一起，然后再将`let`组织到一起。
   - [13.3](#variables--const-let-group) Group all your `const`s and then group all your `let`s.
 
+    > Why? 对于以后你可能将分配之前声明的那些变量，有帮助。
     > Why? This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
 
     ```javascript
@@ -1673,8 +1678,10 @@ Other Style Guides
     ```
 
   <a name="variables--define-where-used"></a><a name="13.4"></a>
+  - [13.4](#variables--define-where-used) 将变量分配到需要的地方，但请放在合理的位置😀。
   - [13.4](#variables--define-where-used) Assign variables where you need them, but place them in a reasonable place.
 
+    > Why? `let` and `const` 是块作用域，而不是函数作用域。
     > Why? `let` and `const` are block scoped and not function scoped.
 
     ```javascript
@@ -1711,8 +1718,10 @@ Other Style Guides
     }
     ```
   <a name="variables--no-chain-assignment"></a><a name="13.5"></a>
+  - [13.5](#variables--no-chain-assignment) 不要连接变量分配。eslint: [`no-multi-assign`](https://eslint.org/docs/rules/no-multi-assign)
   - [13.5](#variables--no-chain-assignment) Don’t chain variable assignments. eslint: [`no-multi-assign`](https://eslint.org/docs/rules/no-multi-assign)
 
+    > Why? 链接变量分配会创建隐式全局变量。
     > Why? Chaining variable assignments creates implicit global variables.
 
     ```javascript
@@ -1744,8 +1753,10 @@ Other Style Guides
     ```
 
   <a name="variables--unary-increment-decrement"></a><a name="13.6"></a>
+  - [13.6](#variables--unary-increment-decrement) 避免使用一元递增和递减语法 (`++`, `--`). eslint [`no-plusplus`](https://eslint.org/docs/rules/no-plusplus)
   - [13.6](#variables--unary-increment-decrement) Avoid using unary increments and decrements (`++`, `--`). eslint [`no-plusplus`](https://eslint.org/docs/rules/no-plusplus)
 
+    > Why? 根据eslint文档, 一元递增和递减语句受到自动分号插入的约束，并可能导致程序中值增加或递减的无声错误。用`num += 1`而不是`num++`/或`num ++`语句来改变值也更具表现力。禁用一元递增和递减语句也能防止无意识中预增量/或预递减值，这也能程序中出现意外行为。
     > Why? Per the eslint documentation, unary increment and decrement statements are subject to automatic semicolon insertion and can cause silent errors with incrementing or decrementing values within an application. It is also more expressive to mutate your values with statements like `num += 1` instead of `num++` or `num ++`. Disallowing unary increment and decrement statements also prevents you from pre-incrementing/pre-decrementing values unintentionally which can also cause unexpected behavior in your programs.
 
     ```javascript
@@ -1801,8 +1812,10 @@ Other Style Guides
     ```
 
 <a name="variables--no-unused-vars"></a>
+  - [13.8](#variables--no-unused-vars) 禁止使用的变量. eslint: [`no-unused-vars`](https://eslint.org/docs/rules/no-unused-vars)
   - [13.8](#variables--no-unused-vars) Disallow unused variables. eslint: [`no-unused-vars`](https://eslint.org/docs/rules/no-unused-vars)
 
+    > Why? 由于重构不完整，在代码任何位置，声明且未使用的变量很可能是错误。这些变量占用了代码空间，并可能导致读者的混淆。
     > Why? Variables that are declared and not used anywhere in the code are most likely an error due to incomplete refactoring. Such variables take up space in the code and can lead to confusion by readers.
 
     ```javascript
@@ -1810,14 +1823,17 @@ Other Style Guides
 
     var some_unused_var = 42;
 
+    // 只写变量不被使用
     // Write-only variables are not considered as used.
     var y = 10;
     y = 5;
 
+    // 修改自身的读取不被视为已使用
     // A read for a modification of itself is not considered as used.
     var z = 0;
     z = z + 1;
 
+    // 未使用的方法参数
     // Unused function arguments.
     function getX(x, y) {
         return x;
@@ -1834,9 +1850,12 @@ Other Style Guides
 
     alert(getXPlusY(x, y));
 
+    // 及时未使用'type'也会被忽略，因为它具有一个同级的休息属性。
     // 'type' is ignored even if unused because it has a rest property sibling.
+    // 这是提取胜率指定键的对象的一种形式。
     // This is a form of extracting an object that omits the specified keys.
     var { type, ...coords } = data;
+    // ‘coords’ 就是没有'type'属性的“数据”对象。
     // 'coords' is now the 'data' object without its 'type' property.
     ```
 
