@@ -1446,9 +1446,10 @@ Other Style Guides
   - [11.1](#iterators--nope) 不要使用迭代器。优先使用高阶方法来代替`for-in` or `for-of`。eslint: [`no-iterator`](https://eslint.org/docs/rules/no-iterator.html) [`no-restricted-syntax`](https://eslint.org/docs/rules/no-restricted-syntax)
   - [11.1](#iterators--nope) Don’t use iterators. Prefer JavaScript’s higher-order functions instead of loops like `for-in` or `for-of`. eslint: [`no-iterator`](https://eslint.org/docs/rules/no-iterator.html) [`no-restricted-syntax`](https://eslint.org/docs/rules/no-restricted-syntax)
 
-    > Why? This enforces our immutable rule. Dealing with pure functions that return values is easier to reason about than side effects.
+    > Why? 这将强制我们使用不变的规则。处理返回值的纯函数比其副作用更容易推理。
     > Why? This enforces our immutable rule. Dealing with pure functions that return values is easier to reason about than side effects.
 
+    > 使用 `map()` / `every()` / `filter()` / `find()` / `findIndex()` / `reduce()` / `some()` / ... 来遍历数组，使用`Object.keys()` / `Object.values()` / `Object.entries()` 生产数组，以便遍历对象。
     > Use `map()` / `every()` / `filter()` / `find()` / `findIndex()` / `reduce()` / `some()` / ... to iterate over arrays, and `Object.keys()` / `Object.values()` / `Object.entries()` to produce arrays so you can iterate over objects.
 
     ```javascript
@@ -1489,13 +1490,17 @@ Other Style Guides
     ```
 
   <a name="generators--nope"></a><a name="11.2"></a>
+  - [11.2](#generators--nope) 现在不要使用generator。
   - [11.2](#generators--nope) Don’t use generators for now.
 
+    > Why? 他们不能更好的转换为ES5。
     > Why? They don’t transpile well to ES5.
 
   <a name="generators--spacing"></a>
+  - [11.3](#generators--spacing) 如果一定要使用generator，或者忽略[我们的建议](#generators--nope), 请确保他们的函数签名要保持适当间隔。eslint: [`generator-star-spacing`](https://eslint.org/docs/rules/generator-star-spacing)
   - [11.3](#generators--spacing) If you must use generators, or if you disregard [our advice](#generators--nope), make sure their function signature is spaced properly. eslint: [`generator-star-spacing`](https://eslint.org/docs/rules/generator-star-spacing)
 
+    > Why? `function` 和 `*` 是相同的概念关键字的一部分 - `*` 不是`function`的修饰符, `function*` 是唯一的构造函数，与`function`不同。
     > Why? `function` and `*` are part of the same conceptual keyword - `*` is not a modifier for `function`, `function*` is a unique construct, different from `function`.
 
     ```javascript
