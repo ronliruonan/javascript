@@ -1653,7 +1653,7 @@ Other Style Guides
   - [13.3](#variables--const-let-group) 先将 `const` 组织到一起，然后再将`let`组织到一起。
   - [13.3](#variables--const-let-group) Group all your `const`s and then group all your `let`s.
 
-    > Why? 对于以后你可能将分配之前声明的那些变量，有帮助。
+    > Why? 对于以后你可能将赋值之前声明的那些变量，有帮助。
     > Why? This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
 
     ```javascript
@@ -1678,7 +1678,7 @@ Other Style Guides
     ```
 
   <a name="variables--define-where-used"></a><a name="13.4"></a>
-  - [13.4](#variables--define-where-used) 将变量分配到需要的地方，但请放在合理的位置😀。
+  - [13.4](#variables--define-where-used) 将变量赋值到需要的地方，但请放在合理的位置😀。
   - [13.4](#variables--define-where-used) Assign variables where you need them, but place them in a reasonable place.
 
     > Why? `let` and `const` 是块作用域，而不是函数作用域。
@@ -1718,10 +1718,10 @@ Other Style Guides
     }
     ```
   <a name="variables--no-chain-assignment"></a><a name="13.5"></a>
-  - [13.5](#variables--no-chain-assignment) 不要连接变量分配。eslint: [`no-multi-assign`](https://eslint.org/docs/rules/no-multi-assign)
+  - [13.5](#variables--no-chain-assignment) 不要连接变量赋值。eslint: [`no-multi-assign`](https://eslint.org/docs/rules/no-multi-assign)
   - [13.5](#variables--no-chain-assignment) Don’t chain variable assignments. eslint: [`no-multi-assign`](https://eslint.org/docs/rules/no-multi-assign)
 
-    > Why? 链接变量分配会创建隐式全局变量。
+    > Why? 链接变量赋值会创建隐式全局变量。
     > Why? Chaining variable assignments creates implicit global variables.
 
     ```javascript
@@ -1864,15 +1864,19 @@ Other Style Guides
 ## Hoisting
 
   <a name="hoisting--about"></a><a name="14.1"></a>
+  - [14.1](#hoisting--about) `var` 声明被提升到其最接近的封闭函数的顶部，但他们的赋值不会。`const` and `let` 声明有一个新概念，叫做[暂时性死区 (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone). 有必要知晓为什么 [typeof 已经不再安全](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
   - [14.1](#hoisting--about) `var` declarations get hoisted to the top of their closest enclosing function scope, their assignment does not. `const` and `let` declarations are blessed with a new concept called [Temporal Dead Zones (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone). It’s important to know why [typeof is no longer safe](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
 
     ```javascript
+    // 我们知道它不会生效（假设没有未定义的全局变量）
     // we know this wouldn’t work (assuming there
     // is no notDefined global variable)
     function example() {
       console.log(notDefined); // => throws a ReferenceError
     }
 
+    // 由于变量提升，你可以在使用变量后再声明它。
+    // 注意：‘true’的赋值不会提升。
     // creating a variable declaration after you
     // reference the variable will work due to
     // variable hoisting. Note: the assignment
@@ -1900,6 +1904,7 @@ Other Style Guides
     ```
 
   <a name="hoisting--anon-expressions"></a><a name="14.2"></a>
+  - [14.2](#hoisting--anon-expressions) 匿名函数表达式提升他的变量名称，但不提升函数赋值。
   - [14.2](#hoisting--anon-expressions) Anonymous function expressions hoist their variable name, but not the function assignment.
 
     ```javascript
@@ -1915,6 +1920,7 @@ Other Style Guides
     ```
 
   <a name="hoisting--named-expresions"></a><a name="hoisting--named-expressions"></a><a name="14.3"></a>
+  - [14.3](#hoisting--named-expressions) 命名函数表达式提升变量名称，不提升函数名称和函数体。
   - [14.3](#hoisting--named-expressions) Named function expressions hoist the variable name, not the function name or the function body.
 
     ```javascript
@@ -1944,6 +1950,7 @@ Other Style Guides
     ```
 
   <a name="hoisting--declarations"></a><a name="14.4"></a>
+  - [14.4](#hoisting--declarations) 函数声明提升他们的函数名和函数体。
   - [14.4](#hoisting--declarations) Function declarations hoist their name and the function body.
 
     ```javascript
@@ -1956,6 +1963,7 @@ Other Style Guides
     }
     ```
 
+  - 更多信息请参考[JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting/) by [Ben Cherry](http://www.adequatelygood.com/).
   - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting/) by [Ben Cherry](http://www.adequatelygood.com/).
 
 **[⬆ back to top](#table-of-contents)**
