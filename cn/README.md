@@ -63,7 +63,7 @@ Other Style Guides
   1. [License](#license)
   1. [Amendments](#amendments)
 
-## 类型
+## 类型 / Types
 
   <a name="types--primitives"></a><a name="1.1"></a>
   - [1.1](#types--primitives) **基本类型**: 当你访问基本类型时，你将直接使用他们的值。  
@@ -107,7 +107,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## References
+## 引用 / References
 
   <a name="references--prefer-const"></a><a name="2.1"></a>
   - [2.1](#references--prefer-const) Use `const` for all of your references; avoid using `var`. eslint: [`prefer-const`](https://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](https://eslint.org/docs/rules/no-const-assign.html)
@@ -158,7 +158,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Objects
+## 对象 / Objects
 
   <a name="objects--no-new"></a><a name="3.1"></a>
   - [3.1](#objects--no-new) Use the literal syntax for object creation. eslint: [`no-new-object`](https://eslint.org/docs/rules/no-new-object.html)
@@ -332,7 +332,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Arrays
+## 数组 / Arrays
 
   <a name="arrays--literals"></a><a name="4.1"></a>
   - [4.1](#arrays--literals) Use the literal syntax for array creation. eslint: [`no-array-constructor`](https://eslint.org/docs/rules/no-array-constructor.html)
@@ -497,7 +497,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Destructuring
+## 解构 / Destructuring
 
   <a name="destructuring--object"></a><a name="5.1"></a>
   - [5.1](#destructuring--object) Use object destructuring when accessing and using multiple properties of an object. eslint: [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring)
@@ -566,7 +566,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Strings
+## 字符串 / Strings
 
   <a name="strings--quotes"></a><a name="6.1"></a>
   - [6.1](#strings--quotes) Use single quotes `''` for strings. eslint: [`quotes`](https://eslint.org/docs/rules/quotes.html)
@@ -649,7 +649,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Functions
+## 方法 / Functions
 
   <a name="functions--declarations"></a><a name="7.1"></a>
   - [7.1](#functions--declarations) Use named function expressions instead of function declarations. eslint: [`func-style`](https://eslint.org/docs/rules/func-style)
@@ -931,7 +931,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Arrow Functions
+## 箭头函数 / Arrow Functions
 
   <a name="arrows--use-them"></a><a name="8.1"></a>
   - [8.1](#arrows--use-them) When you must use an anonymous function (as when passing an inline callback), use arrow function notation. eslint: [`prefer-arrow-callback`](https://eslint.org/docs/rules/prefer-arrow-callback.html), [`arrow-spacing`](https://eslint.org/docs/rules/arrow-spacing.html)
@@ -1097,7 +1097,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Classes & Constructors
+## 类&构造函数 / Classes & Constructors
 
   <a name="constructors--use-class"></a><a name="9.1"></a>
   - [9.1](#constructors--use-class) Always use `class`. Avoid manipulating `prototype` directly.
@@ -1262,7 +1262,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Modules
+## 模块 / Modules
 
   <a name="modules--use-them"></a><a name="10.1"></a>
   - [10.1](#modules--use-them) 在一个非标准模块系统中，要使用模块 (`import`/`export`)。也可以用到你倾向的模块系统中。
@@ -1440,7 +1440,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Iterators and Generators
+## 迭代器 和 Generator / Iterators and Generators
 
   <a name="iterators--nope"></a><a name="11.1"></a> 
   - [11.1](#iterators--nope) 不要使用迭代器。优先使用高阶方法来代替`for-in` or `for-of`。eslint: [`no-iterator`](https://eslint.org/docs/rules/no-iterator.html) [`no-restricted-syntax`](https://eslint.org/docs/rules/no-restricted-syntax)
@@ -1561,7 +1561,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Properties
+## 属性 / Properties
 
   <a name="properties--dot"></a><a name="12.1"></a>
   - [12.1](#properties--dot) 使用点语法访问属性。eslint: [`dot-notation`](https://eslint.org/docs/rules/dot-notation.html)
@@ -1610,7 +1610,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Variables
+## 变量 / Variables
 
   <a name="variables--const"></a><a name="13.1"></a>
   - [13.1](#variables--const) 始终使用 `const` or `let` 来声明变量。不要对全局变量这样做。我们希望避免污染全局命名空间。...地球超人警告我们注意它们。eslint: [`no-undef`](https://eslint.org/docs/rules/no-undef) [`prefer-const`](https://eslint.org/docs/rules/prefer-const)
@@ -1861,7 +1861,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Hoisting
+## 提升 / Hoisting
 
   <a name="hoisting--about"></a><a name="14.1"></a>
   - [14.1](#hoisting--about) `var` 声明被提升到其最接近的封闭函数的顶部，但他们的赋值不会。`const` and `let` 声明有一个新概念，叫做[暂时性死区 (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone). 有必要知晓为什么 [typeof 已经不再安全](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
@@ -1968,7 +1968,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Comparison Operators & Equality
+## 比较运算符和判等 / Comparison Operators & Equality
 
   <a name="comparison--eqeqeq"></a><a name="15.1"></a>
   - [15.1](#comparison--eqeqeq) Use `===` and `!==` over `==` and `!=`. eslint: [`eqeqeq`](https://eslint.org/docs/rules/eqeqeq.html)
@@ -2151,7 +2151,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Blocks
+## 块 / Blocks
 
   <a name="blocks--braces"></a><a name="16.1"></a>
   - [16.1](#blocks--braces) Use braces with all multi-line blocks. eslint: [`nonblock-statement-body-position`](https://eslint.org/docs/rules/nonblock-statement-body-position)
@@ -2267,7 +2267,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Control Statements
+## 控制语句 / Control Statements
 
   <a name="control-statements"></a>
   - [17.1](#control-statements) In case your control statement (`if`, `while` etc.) gets too long or exceeds the maximum line length, each (grouped) condition could be put into a new line. The logical operator should begin the line.
@@ -2338,7 +2338,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Comments
+## 注释 / Comments
 
   <a name="comments--multiline"></a><a name="17.1"></a>
   - [18.1](#comments--multiline) Use `/** ... */` for multi-line comments.
@@ -2479,7 +2479,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Whitespace
+## 空格 / Whitespace
 
   <a name="whitespace--spaces"></a><a name="18.1"></a>
   - [19.1](#whitespace--spaces) Use soft tabs (space character) set to 2 spaces. eslint: [`indent`](https://eslint.org/docs/rules/indent.html)
@@ -2967,7 +2967,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Commas
+## 逗号 / Commas
 
   <a name="commas--leading-trailing"></a><a name="19.1"></a>
   - [20.1](#commas--leading-trailing) Leading commas: **Nope.** eslint: [`comma-style`](https://eslint.org/docs/rules/comma-style.html)
@@ -3102,7 +3102,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Semicolons
+## 分号 / Semicolons
 
   <a name="semicolons--required"></a><a name="20.1"></a>
   - [21.1](#semicolons--required) **Yup.** eslint: [`semi`](https://eslint.org/docs/rules/semi.html)
@@ -3152,7 +3152,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Type Casting & Coercion
+## 类型转换&强制 / Type Casting & Coercion
 
   <a name="coercion--explicit"></a><a name="21.1"></a>
   - [22.1](#coercion--explicit) Perform type coercion at the beginning of the statement.
@@ -3241,7 +3241,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Naming Conventions
+## 命名规则 / Naming Conventions
 
   <a name="naming--descriptive"></a><a name="22.1"></a>
   - [23.1](#naming--descriptive) Avoid single letter names. Be descriptive with your naming. eslint: [`id-length`](https://eslint.org/docs/rules/id-length)
@@ -3480,7 +3480,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Accessors
+## 访问函数 / Accessors
 
   <a name="accessors--not-required"></a><a name="23.1"></a>
   - [24.1](#accessors--not-required) Accessor functions for properties are not required.
@@ -3549,7 +3549,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Events
+## 事件 / Events
 
   <a name="events--hash"></a><a name="24.1"></a>
   - [25.1](#events--hash) When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass an object literal (also known as a "hash") instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
@@ -3684,7 +3684,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Standard Library
+## 标准库 / Standard Library
 
   The [Standard Library](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects)
   contains utilities that are functionally broken but remain for legacy reasons.
@@ -3724,7 +3724,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Testing
+## 测试 / Testing
 
   <a name="testing--yup"></a><a name="28.1"></a>
   - [30.1](#testing--yup) **Yup.**
@@ -3746,7 +3746,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Performance
+## 性能 / Performance
 
   - [On Layout & Web Performance](https://www.kellegous.com/j/2013/01/26/layout-performance/)
   - [String vs Array Concat](https://jsperf.com/string-vs-array-concat/2)
@@ -3760,7 +3760,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Resources
+## 资源 / Resources
 
 **Learning ES6+**
 
@@ -3841,7 +3841,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## In the Wild
+##  / In the Wild
 
   This is a list of organizations that are using this style guide. Send us a pull request and we'll add you to the list.
 
@@ -3950,7 +3950,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Translation
+## 翻译 / Translation
 
   This style guide is also available in other languages:
 
@@ -3971,7 +3971,7 @@ Other Style Guides
   - ![ua](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Ukraine.png) **Ukrainian**: [ivanzusko/javascript](https://github.com/ivanzusko/javascript)
   - ![vn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) **Vietnam**: [dangkyokhoang/javascript-style-guide](https://github.com/dangkyokhoang/javascript-style-guide)
 
-## The JavaScript Style Guide Guide
+## JavaScript风格指南 / The JavaScript Style Guide Guide
 
   - [Reference](https://github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide)
 
