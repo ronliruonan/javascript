@@ -2164,6 +2164,7 @@ Other Style Guides
 ## 块 / Blocks
 
   <a name="blocks--braces"></a><a name="16.1"></a>
+  - [16.1](#blocks--braces) 多行块使用大括号。eslint: [`nonblock-statement-body-position`](https://eslint.org/docs/rules/nonblock-statement-body-position)
   - [16.1](#blocks--braces) Use braces with all multi-line blocks. eslint: [`nonblock-statement-body-position`](https://eslint.org/docs/rules/nonblock-statement-body-position)
 
     ```javascript
@@ -2189,6 +2190,7 @@ Other Style Guides
     ```
 
   <a name="blocks--cuddled-elses"></a><a name="16.2"></a>
+  - [16.2](#blocks--cuddled-elses) 如果你使用`if``else`代码块，将`else`放在`if`代码块的结束行。 eslint: [`brace-style`](https://eslint.org/docs/rules/brace-style.html)
   - [16.2](#blocks--cuddled-elses) If you’re using multi-line blocks with `if` and `else`, put `else` on the same line as your `if` block’s closing brace. eslint: [`brace-style`](https://eslint.org/docs/rules/brace-style.html)
 
     ```javascript
@@ -2211,6 +2213,7 @@ Other Style Guides
     ```
 
   <a name="blocks--no-else-return"></a><a name="16.3"></a>
+  - [16.3](#blocks--no-else-return) 如果`if`代码块始终执行`return`语句，那么之后的`else`代码块不是必须的。包含的`return`语句的`if`代码块之后的`else if`的`return`语句可以分割为多个`if`代码块。eslint: [`no-else-return`](https://eslint.org/docs/rules/no-else-return)
   - [16.3](#blocks--no-else-return) If an `if` block always executes a `return` statement, the subsequent `else` block is unnecessary. A `return` in an `else if` block following an `if` block that contains a `return` can be separated into multiple `if` blocks. eslint: [`no-else-return`](https://eslint.org/docs/rules/no-else-return)
 
     ```javascript
