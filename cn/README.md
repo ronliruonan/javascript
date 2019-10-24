@@ -1,4 +1,4 @@
-# Airbnb JavaScript Style Guide() {
+# Airbnb JavaScript 风格指南() {
 
 对JavaScript最合理的方法
 *A mostly reasonable approach to JavaScript*
@@ -1971,26 +1971,30 @@ Other Style Guides
 ## 比较运算符和判等 / Comparison Operators & Equality
 
   <a name="comparison--eqeqeq"></a><a name="15.1"></a>
+  - [15.1](#comparison--eqeqeq) 使用 `===` 和 `!==` 超过 `==` 和 `!=`. eslint: [`eqeqeq`](https://eslint.org/docs/rules/eqeqeq.html)
   - [15.1](#comparison--eqeqeq) Use `===` and `!==` over `==` and `!=`. eslint: [`eqeqeq`](https://eslint.org/docs/rules/eqeqeq.html)
 
   <a name="comparison--if"></a><a name="15.2"></a>
+  - [15.2](#comparison--if) 条件语句（如`if`语句）使用`ToBoolean`抽象方法使用强制计算表达式，并始终遵循以下简单规则：
   - [15.2](#comparison--if) Conditional statements such as the `if` statement evaluate their expression using coercion with the `ToBoolean` abstract method and always follow these simple rules:
 
-    - **Objects** evaluate to **true**
-    - **Undefined** evaluates to **false**
-    - **Null** evaluates to **false**
-    - **Booleans** evaluate to **the value of the boolean**
-    - **Numbers** evaluate to **false** if **+0, -0, or NaN**, otherwise **true**
-    - **Strings** evaluate to **false** if an empty string `''`, otherwise **true**
+    - **Objects** 计算为：**true**
+    - **Undefined** 计算为：**false**
+    - **Null** 计算为：**false**
+    - **Booleans** 计算为：**布尔变量本身**
+    - **Numbers** 计算为：值为**+0, -0, NaN**将计算为**false**, 其他情况将计算为**true**
+    - **Strings** 计算为：空字符串`''`将计算为**false**，其他情况将计算为**true**
 
     ```javascript
     if ([0] && []) {
       // true
+      // 一个数组（甚至空数组）是一个对象，对象将计算为true
       // an array (even an empty one) is an object, objects will evaluate to true
     }
     ```
 
   <a name="comparison--shortcuts"></a><a name="15.3"></a>
+  - [15.3](#comparison--shortcuts) 对于布尔值使用快捷方式，但对字符串和数字进行显示比较。
   - [15.3](#comparison--shortcuts) Use shortcuts for booleans, but explicit comparisons for strings and numbers.
 
     ```javascript
@@ -2026,11 +2030,13 @@ Other Style Guides
     ```
 
   <a name="comparison--moreinfo"></a><a name="15.4"></a>
-  - [15.4](#comparison--moreinfo) For more information see [Truth Equality and JavaScript](https://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll.
+  - [15.4](#comparison--moreinfo) 更多信息请参考 [Truth Equality and JavaScript](https://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll.
 
   <a name="comparison--switch-blocks"></a><a name="15.5"></a>
+  - [15.5](#comparison--switch-blocks) 使用大括号包含词法声明的 `case` and `default`字句中创建块（例如：`let`, `const`, `function`, and `class`）。eslint: [`no-case-declarations`](https://eslint.org/docs/rules/no-case-declarations.html)
   - [15.5](#comparison--switch-blocks) Use braces to create blocks in `case` and `default` clauses that contain lexical declarations (e.g. `let`, `const`, `function`, and `class`). eslint: [`no-case-declarations`](https://eslint.org/docs/rules/no-case-declarations.html)
 
+    > Why? 词法声明在整个`switch`块中可见，但只有在分配时才初始化，这仅在达到`case`时发生。当多了个`case`子句尝试定义同一个事儿时，这会导致问题发生。
     > Why? Lexical declarations are visible in the entire `switch` block but only get initialized when assigned, which only happens when its `case` is reached. This causes problems when multiple `case` clauses attempt to define the same thing.
 
     ```javascript
@@ -2077,6 +2083,7 @@ Other Style Guides
     ```
 
   <a name="comparison--nested-ternaries"></a><a name="15.6"></a>
+  - [15.6](#comparison--nested-ternaries) 三元表达式不应该嵌套，通常应该是单行表达式。eslint: [`no-nested-ternary`](https://eslint.org/docs/rules/no-nested-ternary.html)
   - [15.6](#comparison--nested-ternaries) Ternaries should not be nested and generally be single line expressions. eslint: [`no-nested-ternary`](https://eslint.org/docs/rules/no-nested-ternary.html)
 
     ```javascript
@@ -2098,6 +2105,7 @@ Other Style Guides
     ```
 
   <a name="comparison--unneeded-ternary"></a><a name="15.7"></a>
+  - [15.7](#comparison--unneeded-ternary) 避免不必要的三元表达式😀。eslint: [`no-unneeded-ternary`](https://eslint.org/docs/rules/no-unneeded-ternary.html)
   - [15.7](#comparison--unneeded-ternary) Avoid unneeded ternary statements. eslint: [`no-unneeded-ternary`](https://eslint.org/docs/rules/no-unneeded-ternary.html)
 
     ```javascript
@@ -2113,9 +2121,11 @@ Other Style Guides
     ```
 
   <a name="comparison--no-mixed-operators"></a>
+  - [15.8](#comparison--no-mixed-operators) 当混合运算时，使用小括号括起来。 只有一种例外就是标准运算符：`+`, `-`, 和 `**`，因为他们的优先级大家都懂。我们建议将 `/` and `*`括起来，因为他们在混合使用的时候，优先级会模棱两可。
   - [15.8](#comparison--no-mixed-operators) When mixing operators, enclose them in parentheses. The only exception is the standard arithmetic operators: `+`, `-`, and `**` since their precedence is broadly understood. We recommend enclosing `/` and `*` in parentheses because their precedence can be ambiguous when they are mixed.
   eslint: [`no-mixed-operators`](https://eslint.org/docs/rules/no-mixed-operators.html)
 
+    > Why? 这提高了可读性和阐明了开发人员的意图。
     > Why? This improves readability and clarifies the developer’s intention.
 
     ```javascript
