@@ -2504,6 +2504,7 @@ Other Style Guides
 ## 空格 / Whitespace
 
   <a name="whitespace--spaces"></a><a name="18.1"></a>
+  - [19.1](#whitespace--spaces) 使用软Tab（空格符）设置为2个空格。 eslint: [`indent`](https://eslint.org/docs/rules/indent.html)
   - [19.1](#whitespace--spaces) Use soft tabs (space character) set to 2 spaces. eslint: [`indent`](https://eslint.org/docs/rules/indent.html)
 
     ```javascript
@@ -2524,6 +2525,7 @@ Other Style Guides
     ```
 
   <a name="whitespace--before-blocks"></a><a name="18.2"></a>
+  - [19.2](#whitespace--before-blocks) 在大括号之前保留一个空格。 eslint: [`space-before-blocks`](https://eslint.org/docs/rules/space-before-blocks.html)
   - [19.2](#whitespace--before-blocks) Place 1 space before the leading brace. eslint: [`space-before-blocks`](https://eslint.org/docs/rules/space-before-blocks.html)
 
     ```javascript
@@ -2551,6 +2553,7 @@ Other Style Guides
     ```
 
   <a name="whitespace--around-keywords"></a><a name="18.3"></a>
+  - [19.3](#whitespace--around-keywords) 在控制语句之前保留一个空格 (`if`, `while` etc.)。在调用和声明方法时，参数列表和方法名之间不要空格。 eslint: [`keyword-spacing`](https://eslint.org/docs/rules/keyword-spacing.html)
   - [19.3](#whitespace--around-keywords) Place 1 space before the opening parenthesis in control statements (`if`, `while` etc.). Place no space between the argument list and the function name in function calls and declarations. eslint: [`keyword-spacing`](https://eslint.org/docs/rules/keyword-spacing.html)
 
     ```javascript
@@ -2576,6 +2579,7 @@ Other Style Guides
     ```
 
   <a name="whitespace--infix-ops"></a><a name="18.4"></a>
+  - [19.4](#whitespace--infix-ops) 使用空格分隔运算符。eslint: [`space-infix-ops`](https://eslint.org/docs/rules/space-infix-ops.html)
   - [19.4](#whitespace--infix-ops) Set off operators with spaces. eslint: [`space-infix-ops`](https://eslint.org/docs/rules/space-infix-ops.html)
 
     ```javascript
@@ -2587,6 +2591,7 @@ Other Style Guides
     ```
 
   <a name="whitespace--newline-at-end"></a><a name="18.5"></a>
+  - [19.5](#whitespace--newline-at-end) 使用单个字符结束文件。eslint: [`eol-last`](https://github.com/eslint/eslint/blob/master/docs/rules/eol-last.md)
   - [19.5](#whitespace--newline-at-end) End files with a single newline character. eslint: [`eol-last`](https://github.com/eslint/eslint/blob/master/docs/rules/eol-last.md)
 
     ```javascript
@@ -2612,6 +2617,7 @@ Other Style Guides
     ```
 
   <a name="whitespace--chains"></a><a name="18.6"></a>
+  - [19.6](#whitespace--chains) 采用首行缩进，当使用长方法链接时（超过2个方法链接）。使用前导点，强调是方法调用，而不是新语句。 eslint: [`newline-per-chained-call`](https://eslint.org/docs/rules/newline-per-chained-call) [`no-whitespace-before-property`](https://eslint.org/docs/rules/no-whitespace-before-property)
   - [19.6](#whitespace--chains) Use indentation when making long method chains (more than 2 method chains). Use a leading dot, which
     emphasizes that the line is a method call, not a new statement. eslint: [`newline-per-chained-call`](https://eslint.org/docs/rules/newline-per-chained-call) [`no-whitespace-before-property`](https://eslint.org/docs/rules/no-whitespace-before-property)
 
@@ -2656,6 +2662,7 @@ Other Style Guides
     ```
 
   <a name="whitespace--after-blocks"></a><a name="18.7"></a>
+  - [19.7](#whitespace--after-blocks) 在代码块之后，下一条语句之前，保留一条空白行。
   - [19.7](#whitespace--after-blocks) Leave a blank line after blocks and before the next statement.
 
     ```javascript
@@ -2714,6 +2721,7 @@ Other Style Guides
     ```
 
   <a name="whitespace--padded-blocks"></a><a name="18.8"></a>
+  - [19.8](#whitespace--padded-blocks) 不要使用空白行填充代码块。eslint: [`padded-blocks`](https://eslint.org/docs/rules/padded-blocks.html)
   - [19.8](#whitespace--padded-blocks) Do not pad your blocks with blank lines. eslint: [`padded-blocks`](https://eslint.org/docs/rules/padded-blocks.html)
 
     ```javascript
@@ -2755,6 +2763,7 @@ Other Style Guides
     ```
 
   <a name="whitespace--no-multiple-blanks"></a>
+  - [19.9](#whitespace--no-multiple-blanks) 不用使用多个空白行来填充你的代码。eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
   - [19.9](#whitespace--no-multiple-blanks) Do not use multiple blank lines to pad your code. eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
 
     <!-- markdownlint-disable MD012 -->
@@ -2809,6 +2818,7 @@ Other Style Guides
     ```
 
   <a name="whitespace--in-parens"></a><a name="18.9"></a>
+  - [19.10](#whitespace--in-parens) 不要在小括号内添加空格。eslint: [`space-in-parens`](https://eslint.org/docs/rules/space-in-parens.html)
   - [19.10](#whitespace--in-parens) Do not add spaces inside parentheses. eslint: [`space-in-parens`](https://eslint.org/docs/rules/space-in-parens.html)
 
     ```javascript
@@ -2834,6 +2844,7 @@ Other Style Guides
     ```
 
   <a name="whitespace--in-brackets"></a><a name="18.10"></a>
+  - [19.11](#whitespace--in-brackets) 不要在方括号中添加空格。eslint: [`array-bracket-spacing`](https://eslint.org/docs/rules/array-bracket-spacing.html)
   - [19.11](#whitespace--in-brackets) Do not add spaces inside brackets. eslint: [`array-bracket-spacing`](https://eslint.org/docs/rules/array-bracket-spacing.html)
 
     ```javascript
@@ -2847,6 +2858,7 @@ Other Style Guides
     ```
 
   <a name="whitespace--in-braces"></a><a name="18.11"></a>
+  - [19.12](#whitespace--in-braces) 在花括号内添加空格。eslint: [`object-curly-spacing`](https://eslint.org/docs/rules/object-curly-spacing.html)
   - [19.12](#whitespace--in-braces) Add spaces inside curly braces. eslint: [`object-curly-spacing`](https://eslint.org/docs/rules/object-curly-spacing.html)
 
     ```javascript
@@ -2858,8 +2870,10 @@ Other Style Guides
     ```
 
   <a name="whitespace--max-len"></a><a name="18.12"></a>
+  - [19.13](#whitespace--max-len) 禁止代码行超过100个字符（含空格）。注意：每个[above](#strings--line-length), 长字符串不受此限制，且不应该被打断。 eslint: [`max-len`](https://eslint.org/docs/rules/max-len.html)
   - [19.13](#whitespace--max-len) Avoid having lines of code that are longer than 100 characters (including whitespace). Note: per [above](#strings--line-length), long strings are exempt from this rule, and should not be broken up. eslint: [`max-len`](https://eslint.org/docs/rules/max-len.html)
 
+    > Why? 确保了可读性和可维护性。
     > Why? This ensures readability and maintainability.
 
     ```javascript
@@ -2888,6 +2902,7 @@ Other Style Guides
     ```
 
   <a name="whitespace--block-spacing"></a>
+  - [19.14](#whitespace--block-spacing) 要求在打开的块Token内保持一致的间距，在同一行上需要下一个标记。此规则还在同一行上的闭合块Token和上一个标记内强制一致的间距。 eslint: [`block-spacing`](https://eslint.org/docs/rules/block-spacing)
   - [19.14](#whitespace--block-spacing) Require consistent spacing inside an open block token and the next token on the same line. This rule also enforces consistent spacing inside a close block token and previous token on the same line. eslint: [`block-spacing`](https://eslint.org/docs/rules/block-spacing)
 
     ```javascript
@@ -2901,6 +2916,7 @@ Other Style Guides
     ```
 
   <a name="whitespace--comma-spacing"></a>
+  - [19.15](#whitespace--comma-spacing) 禁止在逗号之前添加空格，在逗号之后需要一个空格。eslint: [`comma-spacing`](https://eslint.org/docs/rules/comma-spacing)
   - [19.15](#whitespace--comma-spacing) Avoid spaces before commas and require a space after commas. eslint: [`comma-spacing`](https://eslint.org/docs/rules/comma-spacing)
 
     ```javascript
@@ -2914,6 +2930,7 @@ Other Style Guides
     ```
 
   <a name="whitespace--computed-property-spacing"></a>
+  - [19.16](#whitespace--computed-property-spacing) 强制计算属性括号内的间距。eslint: [`computed-property-spacing`](https://eslint.org/docs/rules/computed-property-spacing)
   - [19.16](#whitespace--computed-property-spacing) Enforce spacing inside of computed property brackets. eslint: [`computed-property-spacing`](https://eslint.org/docs/rules/computed-property-spacing)
 
     ```javascript
@@ -2931,6 +2948,7 @@ Other Style Guides
     ```
 
   <a name="whitespace--func-call-spacing"></a>
+  - [19.17](#whitespace--func-call-spacing) 禁止在方法和调用之间的空格。eslint: [`func-call-spacing`](https://eslint.org/docs/rules/func-call-spacing)
   - [19.17](#whitespace--func-call-spacing) Avoid spaces between functions and their invocations. eslint: [`func-call-spacing`](https://eslint.org/docs/rules/func-call-spacing)
 
     ```javascript
@@ -2945,6 +2963,7 @@ Other Style Guides
     ```
 
   <a name="whitespace--key-spacing"></a>
+  - [19.18](#whitespace--key-spacing) 在对象的文字属性中，强制键值对的间距。 eslint: [`key-spacing`](https://eslint.org/docs/rules/key-spacing)
   - [19.18](#whitespace--key-spacing) Enforce spacing between keys and values in object literal properties. eslint: [`key-spacing`](https://eslint.org/docs/rules/key-spacing)
 
     ```javascript
@@ -2957,9 +2976,11 @@ Other Style Guides
     ```
 
   <a name="whitespace--no-trailing-spaces"></a>
+  - [19.19](#whitespace--no-trailing-spaces) 禁止行后尾随的空格。eslint: [`no-trailing-spaces`](https://eslint.org/docs/rules/no-trailing-spaces)
   - [19.19](#whitespace--no-trailing-spaces) Avoid trailing spaces at the end of lines. eslint: [`no-trailing-spaces`](https://eslint.org/docs/rules/no-trailing-spaces)
 
   <a name="whitespace--no-multiple-empty-lines"></a>
+  - [19.20](#whitespace--no-multiple-empty-lines) 禁止多行空行,只允许文件结尾出现一个新行，且禁止文件开头出现空行。eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
   - [19.20](#whitespace--no-multiple-empty-lines) Avoid multiple empty lines, only allow one newline at the end of files, and avoid a newline at the beginning of files. eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
 
     <!-- markdownlint-disable MD012 -->
