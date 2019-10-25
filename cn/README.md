@@ -2357,11 +2357,12 @@ Other Style Guides
 ## 注释 / Comments
 
   <a name="comments--multiline"></a><a name="17.1"></a>
+  - [18.1](#comments--multiline) 多行注释使用：`/** ... */`。
   - [18.1](#comments--multiline) Use `/** ... */` for multi-line comments.
 
     ```javascript
     // bad 不推荐
-    // make() returns a new element
+    // make() returns a new element 
     // based on the passed in tag name
     //
     // @param {String} tag
@@ -2387,6 +2388,7 @@ Other Style Guides
     ```
 
   <a name="comments--singleline"></a><a name="17.2"></a>
+  - [18.2](#comments--singleline) 单行注释使用 `//`。将单行注释放在注释主体上方。除非注释位于代码块的第一行上，否则在注释前空置一行。
   - [18.2](#comments--singleline) Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment unless it’s on the first line of a block.
 
     ```javascript
@@ -2426,6 +2428,7 @@ Other Style Guides
     ```
 
   <a name="comments--spaces"></a>
+  - [18.3](#comments--spaces) 在所有注释前添加一个空格，方便阅读。 eslint: [`spaced-comment`](https://eslint.org/docs/rules/spaced-comment)
   - [18.3](#comments--spaces) Start all comments with a space to make it easier to read. eslint: [`spaced-comment`](https://eslint.org/docs/rules/spaced-comment)
 
     ```javascript
@@ -2463,9 +2466,11 @@ Other Style Guides
     ```
 
   <a name="comments--actionitems"></a><a name="17.3"></a>
+  - [18.4](#comments--actionitems) 在注释前加上`FIXME` or `TODO`，帮助其他开发人员更快地了解 你是否在指明一个需要回顾的问题/或者是否在提出一个解决办法需要被实施。这些与常规注释不同，因为他们是可操作性的。操作是：`FIXME: -- 需要解决` or `TODO: --需要实现`。
   - [18.4](#comments--actionitems) Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you’re pointing out a problem that needs to be revisited, or if you’re suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME: -- need to figure this out` or `TODO: -- need to implement`.
 
   <a name="comments--fixme"></a><a name="17.4"></a>
+  - [18.5](#comments--fixme) 使用 `// FIXME:` 来注释问题。
   - [18.5](#comments--fixme) Use `// FIXME:` to annotate problems.
 
     ```javascript
@@ -2473,13 +2478,14 @@ Other Style Guides
       constructor() {
         super();
 
-        // FIXME: shouldn’t use a global here
+        // FIXME: shouldn’t use a global here // FIXME: 不应该在这儿使用一个全局变量
         total = 0;
       }
     }
     ```
 
   <a name="comments--todo"></a><a name="17.5"></a>
+  - [18.6](#comments--todo) 使用 `// TODO:` 来注释问题的解决办法。
   - [18.6](#comments--todo) Use `// TODO:` to annotate solutions to problems.
 
     ```javascript
@@ -2487,7 +2493,7 @@ Other Style Guides
       constructor() {
         super();
 
-        // TODO: total should be configurable by an options param
+        // TODO: total should be configurable by an options param // TODO: total应该是可配置的可选参数
         this.total = 0;
       }
     }
