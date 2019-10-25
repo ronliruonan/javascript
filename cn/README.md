@@ -2283,8 +2283,10 @@ Other Style Guides
 ## 控制语句 / Control Statements
 
   <a name="control-statements"></a>
+  - [17.1](#control-statements) 如果你的控制语句(`if`, `while` etc.) 太长/或者超过单行最大长度， 每个（分组）条件可以放入新行中。逻辑运算应该在行起始位置。
   - [17.1](#control-statements) In case your control statement (`if`, `while` etc.) gets too long or exceeds the maximum line length, each (grouped) condition could be put into a new line. The logical operator should begin the line.
 
+    > Why? 要求在行开头的运算保持运算符对齐，并尊选类似于方法链式。这提高了可读性，是视觉上更容易遵循复杂的逻辑。
     > Why? Requiring operators at the beginning of the line keeps the operators aligned and follows a pattern similar to method chaining. This also improves readability by making it easier to visually follow complex logic.
 
     ```javascript
@@ -2337,6 +2339,7 @@ Other Style Guides
     ```
 
   <a name="control-statement--value-selection"></a><a name="control-statements--value-selection"></a>
+  - [17.2](#control-statements--value-selection) 不要在控制语句中使用选择运算符。😀😀
   - [17.2](#control-statements--value-selection) Don't use selection operators in place of control statements.
 
     ```javascript
