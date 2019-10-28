@@ -3152,6 +3152,7 @@ Other Style Guides
   <a name="semicolons--required"></a><a name="20.1"></a>
   - [21.1](#semicolons--required) **Yup.** eslint: [`semi`](https://eslint.org/docs/rules/semi.html)
 
+    > Why? 当JavaScript遇到一行没有分号的换行时，它使用一个规则配置叫 [自动分号插入](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion) 来确定是否将换行符视为语句的结尾，且 (顾名思义)在换行符之前将分号放入代码中，如果它认为如此。但是，ASI包含一些古怪的行为，如果JavaScript误解了换行符，您的代码就会中断。随着新功能成为JavaScript的一部分，这些规则将变得更加复杂。显式终止语句并配置linter一不过缺少的分号有呼吁防止遇到问题。
     > Why? When JavaScript encounters a line break without a semicolon, it uses a set of rules called [Automatic Semicolon Insertion](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion) to determine whether or not it should regard that line break as the end of a statement, and (as the name implies) place a semicolon into your code before the line break if it thinks so. ASI contains a few eccentric behaviors, though, and your code will break if JavaScript misinterprets your line break. These rules will become more complicated as new features become a part of JavaScript. Explicitly terminating your statements and configuring your linter to catch missing semicolons will help prevent you from encountering issues.
 
     ```javascript
