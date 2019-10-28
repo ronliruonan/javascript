@@ -3201,6 +3201,7 @@ Other Style Guides
 ## 类型转换&强制 / Type Casting & Coercion
 
   <a name="coercion--explicit"></a><a name="21.1"></a>
+  - [22.1](#coercion--explicit) 在语句的开头执行类型强制。
   - [22.1](#coercion--explicit) Perform type coercion at the beginning of the statement.
 
   <a name="coercion--strings"></a><a name="21.2"></a>
@@ -3213,16 +3214,17 @@ Other Style Guides
     const totalScore = new String(this.reviewScore); // typeof totalScore is "object" not "string"
 
     // bad 不推荐
-    const totalScore = this.reviewScore + ''; // invokes this.reviewScore.valueOf()
+    const totalScore = this.reviewScore + ''; // invokes/执行 this.reviewScore.valueOf()
 
     // bad 不推荐
-    const totalScore = this.reviewScore.toString(); // isn’t guaranteed to return a string
+    const totalScore = this.reviewScore.toString(); // isn’t guaranteed to return a string // 不保证返回一个字符串
 
     // good 推荐
     const totalScore = String(this.reviewScore);
     ```
 
   <a name="coercion--numbers"></a><a name="21.3"></a>
+  - [22.3](#coercion--numbers) Numbers: 使用`Number`做类型转换，使用带有基数的`parseInt`转换字符串。eslint: [`radix`](https://eslint.org/docs/rules/radix) [`no-new-wrappers`](https://eslint.org/docs/rules/no-new-wrappers)
   - [22.3](#coercion--numbers) Numbers: Use `Number` for type casting and `parseInt` always with a radix for parsing strings. eslint: [`radix`](https://eslint.org/docs/rules/radix) [`no-new-wrappers`](https://eslint.org/docs/rules/no-new-wrappers)
 
     ```javascript
@@ -3231,7 +3233,7 @@ Other Style Guides
     // bad 不推荐
     const val = new Number(inputValue);
 
-    // bad 不推荐
+    // bad 不推荐 😀😀😀
     const val = +inputValue;
 
     // bad 不推荐
@@ -3248,6 +3250,7 @@ Other Style Guides
     ```
 
   <a name="coercion--comment-deviations"></a><a name="21.4"></a>
+  - [22.4](#coercion--comment-deviations) 不论出于任何原因，您正在做一些疯狂的事情，`parseInt`是你的瓶颈，出于[性能的原因]需要使用位移运算(https://jsperf.com/coercion-vs-casting/3), 留下评论解释你在做什么。
   - [22.4](#coercion--comment-deviations) If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](https://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you’re doing.
 
     ```javascript
@@ -3261,6 +3264,7 @@ Other Style Guides
     ```
 
   <a name="coercion--bitwise"></a><a name="21.5"></a>
+  - [22.5](#coercion--bitwise) **Note:** 使用位运算符时要当心。Numbers 代表的是[64位值](https://es5.github.io/#x4.3.19), 但是位移运算符总是返回32位整数 ([source](https://es5.github.io/#x11.7))。位移对于大于32位的整数值经发生不期望的行为。[Discussion](https://github.com/airbnb/javascript/issues/109). 最大签名的32为Int值是 2,147,483,647:
   - [22.5](#coercion--bitwise) **Note:** Be careful when using bitshift operations. Numbers are represented as [64-bit values](https://es5.github.io/#x4.3.19), but bitshift operations always return a 32-bit integer ([source](https://es5.github.io/#x11.7)). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. [Discussion](https://github.com/airbnb/javascript/issues/109). Largest signed 32-bit Int is 2,147,483,647:
 
     ```javascript
