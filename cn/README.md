@@ -2983,7 +2983,6 @@ Other Style Guides
   - [19.20](#whitespace--no-multiple-empty-lines) 禁止多行空行,只允许文件结尾出现一个新行，且禁止文件开头出现空行。eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
   - [19.20](#whitespace--no-multiple-empty-lines) Avoid multiple empty lines, only allow one newline at the end of files, and avoid a newline at the beginning of files. eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
 
-    <!-- markdownlint-disable MD012 -->
     ```javascript
     // bad 不推荐 - multiple empty lines
     var x = 1;
@@ -3013,6 +3012,7 @@ Other Style Guides
 ## 逗号 / Commas
 
   <a name="commas--leading-trailing"></a><a name="19.1"></a>
+  - [20.1](#commas--leading-trailing) 前导逗号：**Nope.** eslint: [`comma-style`](https://eslint.org/docs/rules/comma-style.html)
   - [20.1](#commas--leading-trailing) Leading commas: **Nope.** eslint: [`comma-style`](https://eslint.org/docs/rules/comma-style.html)
 
     ```javascript
@@ -3048,8 +3048,10 @@ Other Style Guides
     ```
 
   <a name="commas--dangling"></a><a name="19.2"></a>
+  - [20.2](#commas--dangling) 附加尾随逗号: **Yup.** eslint: [`comma-dangle`](https://eslint.org/docs/rules/comma-dangle.html)
   - [20.2](#commas--dangling) Additional trailing comma: **Yup.** eslint: [`comma-dangle`](https://eslint.org/docs/rules/comma-dangle.html)
 
+    > Why? 这将触发更清洁的git差异。 此外, 想Bable这样的转移其将删除转码代码中的附加尾随逗号，这意味着您不必担心在旧版浏览器的 [尾随逗号问题](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas)。
     > Why? This leads to cleaner git diffs. Also, transpilers like Babel will remove the additional trailing comma in the transpiled code which means you don’t have to worry about the [trailing comma problem](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas) in legacy browsers.
 
     ```diff
