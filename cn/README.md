@@ -3285,7 +3285,7 @@ Other Style Guides
     // good 推荐
     const hasAge = Boolean(age);
 
-    // best
+    // best 极力推荐
     const hasAge = !!age;
     ```
 
@@ -3294,6 +3294,7 @@ Other Style Guides
 ## 命名规则 / Naming Conventions
 
   <a name="naming--descriptive"></a><a name="22.1"></a>
+  - [23.1](#naming--descriptive) 禁止单字符命名，让你的命名具有自我描述性。eslint: [`id-length`](https://eslint.org/docs/rules/id-length)
   - [23.1](#naming--descriptive) Avoid single letter names. Be descriptive with your naming. eslint: [`id-length`](https://eslint.org/docs/rules/id-length)
 
     ```javascript
@@ -3309,6 +3310,7 @@ Other Style Guides
     ```
 
   <a name="naming--camelCase"></a><a name="22.2"></a>
+  - [23.2](#naming--camelCase) 使用驼峰格式来命名对象、方法和实例。eslint: [`camelcase`](https://eslint.org/docs/rules/camelcase.html)
   - [23.2](#naming--camelCase) Use camelCase when naming objects, functions, and instances. eslint: [`camelcase`](https://eslint.org/docs/rules/camelcase.html)
 
     ```javascript
@@ -3323,6 +3325,7 @@ Other Style Guides
     ```
 
   <a name="naming--PascalCase"></a><a name="22.3"></a>
+  - [23.3](#naming--PascalCase) 仅在命名构造函数和类时，采用PascalCase命名方式。eslint: [`new-cap`](https://eslint.org/docs/rules/new-cap.html)
   - [23.3](#naming--PascalCase) Use PascalCase only when naming constructors or classes. eslint: [`new-cap`](https://eslint.org/docs/rules/new-cap.html)
 
     ```javascript
@@ -3331,7 +3334,7 @@ Other Style Guides
       this.name = options.name;
     }
 
-    const bad 不推荐 = new user({
+    const bad = new user({
       name: 'nope',
     });
 
@@ -3342,14 +3345,16 @@ Other Style Guides
       }
     }
 
-    const good 推荐 = new User({
+    const good = new User({
       name: 'yup',
     });
     ```
 
   <a name="naming--leading-underscore"></a><a name="22.4"></a>
+  - [23.4](#naming--leading-underscore) 不要使用尾随/或前导下划线。eslint: [`no-underscore-dangle`](https://eslint.org/docs/rules/no-underscore-dangle.html)
   - [23.4](#naming--leading-underscore) Do not use trailing or leading underscores. eslint: [`no-underscore-dangle`](https://eslint.org/docs/rules/no-underscore-dangle.html)
 
+    > Why? JavaScript的属性和方法没有隐私的概念。 尽管前导下划线是“私有”的常见约定，但实际上，这些属性是完全公开的，因此，这些属性是公共API协定的一部分。此约定可能导致开发人员错误地认为更改不会算作中断，或者不需要测试。如果你想要私有化一些东西，它一定不能明显存在。
     > Why? JavaScript does not have the concept of privacy in terms of properties or methods. Although a leading underscore is a common convention to mean “private”, in fact, these properties are fully public, and as such, are part of your public API contract. This convention might lead developers to wrongly think that a change won’t count as breaking, or that tests aren’t needed. tl;dr: if you want something to be “private”, it must not be observably present.
 
     ```javascript
@@ -3368,6 +3373,7 @@ Other Style Guides
     ```
 
   <a name="naming--self-this"></a><a name="22.5"></a>
+  - [23.5](#naming--self-this) 不要保存`this`引用，使用箭头函数/或[函数的bind语法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind).
   - [23.5](#naming--self-this) Don’t save references to `this`. Use arrow functions or [Function#bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind).
 
     ```javascript
@@ -3396,6 +3402,7 @@ Other Style Guides
     ```
 
   <a name="naming--filename-matches-export"></a><a name="22.6"></a>
+  - [23.6](#naming--filename-matches-export) 基本文件名应与其默认导出的名称完全匹配。
   - [23.6](#naming--filename-matches-export) A base filename should exactly match the name of its default export.
 
     ```javascript
@@ -3432,6 +3439,7 @@ Other Style Guides
     ```
 
   <a name="naming--camelCase-default-export"></a><a name="22.7"></a>
+  - [23.7](#naming--camelCase-default-export) 导出默认函数时，使用小驼峰命名规范。文件名应该与函数的名称相同。
   - [23.7](#naming--camelCase-default-export) Use camelCase when you export-default a function. Your filename should be identical to your function’s name.
 
     ```javascript
@@ -3443,6 +3451,7 @@ Other Style Guides
     ```
 
   <a name="naming--PascalCase-singleton"></a><a name="22.8"></a>
+  - [23.8](#naming--PascalCase-singleton) 导出 构造函数 / 类 / 单例 / 函数库 / 基础对象时，使用大驼峰命名规范。
   - [23.8](#naming--PascalCase-singleton) Use PascalCase when you export a constructor / class / singleton / function library / bare object.
 
     ```javascript
@@ -3455,8 +3464,10 @@ Other Style Guides
     ```
 
   <a name="naming--Acronyms-and-Initialisms"></a>
+  - [23.9](#naming--Acronyms-and-Initialisms) 缩写和首字母缩写应该始终保持 全部大写/或小写。
   - [23.9](#naming--Acronyms-and-Initialisms) Acronyms and initialisms should always be all uppercased, or all lowercased.
 
+    > Why? 名称用于可读性，而不是安抚计算机语法。
     > Why? Names are for readability, not to appease a computer algorithm.
 
     ```javascript
@@ -3491,21 +3502,28 @@ Other Style Guides
     ```
 
   <a name="naming--uppercase"></a>
+  - [23.10](#naming--uppercase) 仅当常量(1)导出时，(2)是“const”（无法重新分配），以及（3）程序猿可以信任他（及其嵌套属性）永远不会更改，则可以选择对常量进行大写。
   - [23.10](#naming--uppercase) You may optionally uppercase a constant only if it (1) is exported, (2) is a `const` (it can not be reassigned), and (3) the programmer can trust it (and its nested properties) to never change.
 
+    > Why? 这是一个额外的工具，以帮助在程序猿不确定变量是否会改变的情况下。大写变量让程序猿知道他们可以新人变量（机器属性）不会更改。
     > Why? This is an additional tool to assist in situations where the programmer would be unsure if a variable might ever change. UPPERCASE_VARIABLES are letting the programmer know that they can trust the variable (and its properties) not to change.
+    - 所有“const”变量呢？这是不必要的，因此不赢将大写用于文件中的常量，但是，他应用于导出常量。
     - What about all `const` variables? - This is unnecessary, so uppercasing should not be used for constants within a file. It should be used for exported constants however.
+    - 导出的对象呢？在定级导出（例如“导出”）大写，并维护所有嵌套属性不会更改。
     - What about exported objects? - Uppercase at the top level of export (e.g. `EXPORTED_OBJECT.key`) and maintain that all nested properties do not change.
 
     ```javascript
     // bad 不推荐
     const PRIVATE_VARIABLE = 'should not be unnecessarily uppercased within a file';
+    const PRIVATE_VARIABLE = '不应在文件中不必要地大写';
 
     // bad 不推荐
     export const THING_TO_BE_CHANGED = 'should obviously not be uppercased';
+    export const THING_TO_BE_CHANGED = '显然不应该大写';
 
     // bad 不推荐
     export let REASSIGNABLE_VARIABLE = 'do not use let with uppercase variables';
+    export let REASSIGNABLE_VARIABLE = '不要使用大写变量let';
 
     // ---
 
@@ -3518,6 +3536,7 @@ Other Style Guides
     // ---
 
     // bad 不推荐 - unnecessarily uppercases key while adding no semantic value
+    // 不必要的大写键名，同事不添加语义值。
     export const MAPPING = {
       KEY: 'value'
     };
