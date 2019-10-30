@@ -3549,12 +3549,14 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## 访问函数 / Accessors
+## 访问器函数 / Accessors
 
   <a name="accessors--not-required"></a><a name="23.1"></a>
+  - [24.1](#accessors--not-required) 属性的访问器函数不是必需的。
   - [24.1](#accessors--not-required) Accessor functions for properties are not required.
 
   <a name="accessors--no-getters-setters"></a><a name="23.2"></a>
+  - [24.2](#accessors--no-getters-setters) 不要使用JavaScript的getters/setters，因为他们会导致意外的副作用，并且难测试、难维护、难推断。相反，如果您确实使用访问器函数，请使用`getVal()` 和 `setVal('hello')`。
   - [24.2](#accessors--no-getters-setters) Do not use JavaScript getters/setters as they cause unexpected side effects and are harder to test, maintain, and reason about. Instead, if you do make accessor functions, use `getVal()` and `setVal('hello')`.
 
     ```javascript
@@ -3582,6 +3584,7 @@ Other Style Guides
     ```
 
   <a name="accessors--boolean-prefix"></a><a name="23.3"></a>
+  - [24.3](#accessors--boolean-prefix) 如果属性/方法是`boolean`,使用 `isVal()` /或 `hasVal()`.
   - [24.3](#accessors--boolean-prefix) If the property/method is a `boolean`, use `isVal()` or `hasVal()`.
 
     ```javascript
@@ -3597,6 +3600,7 @@ Other Style Guides
     ```
 
   <a name="accessors--consistent"></a><a name="23.4"></a>
+  - [24.4](#accessors--consistent) 可以创建`get()` 和 `set()` 函数,但请保持一致。
   - [24.4](#accessors--consistent) It’s okay to create `get()` and `set()` functions, but be consistent.
 
     ```javascript
