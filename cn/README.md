@@ -1,6 +1,6 @@
 # Airbnb JavaScript 风格指南() {
 
-对JavaScript最合理的方法
+JavaScript最合理的方法
 *A mostly reasonable approach to JavaScript*
 
 > **注意**：该指南假设你正在使用[Babel](https://babeljs.io)，需要你使用[babel-preset-airbnb](https://npmjs.com/babel-preset-airbnb)或者等价的东西。
