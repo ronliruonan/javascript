@@ -3625,6 +3625,7 @@ Other Style Guides
 ## 事件 / Events
 
   <a name="events--hash"></a><a name="24.1"></a>
+  - [25.1](#events--hash) 将数据负载附加到事件（无论是DOM事件还是更专业的事件，如Backbone事件）时，传递文本对象（也叫“hash”）而不是原始值。这允许后续参与者向事件负载添加更多数据，而无需查找和更新事件的每个处理程序。例如，
   - [25.1](#events--hash) When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass an object literal (also known as a "hash") instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
 
     ```javascript
