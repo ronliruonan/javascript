@@ -3727,7 +3727,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## ECMAScript 5 Compatibility
+## ECMAScript 5 兼容性/Compatibility
 
   <a name="es5-compat--kangax"></a><a name="26.1"></a>
   - [27.1](#es5-compat--kangax) Refer to [Kangax](https://twitter.com/kangax/)’s ES5 [compatibility table](https://kangax.github.io/es5-compat-table/).
@@ -3735,9 +3735,10 @@ Other Style Guides
 **[⬆ back to top](#table-of-contents)**
 
 <a name="ecmascript-6-styles"></a>
-## ECMAScript 6+ (ES 2015+) Styles
+## ES6+ (ES 2015+)风格 / ECMAScript 6+ (ES 2015+) Styles
 
   <a name="es6-styles"></a><a name="27.1"></a>
+  - [28.1](#es6-styles) 这里有各种ES6+的功能链接。
   - [28.1](#es6-styles) This is a collection of links to the various ES6+ features.
 
 1. [Arrow Functions](#arrow-functions)
@@ -3768,11 +3769,13 @@ Other Style Guides
   contains utilities that are functionally broken but remain for legacy reasons.
 
   <a name="standard-library--isnan"></a>
+  - [29.1](#standard-library--isnan) 使用`Number.isNaN`代替全局的`isNaN`。
   - [29.1](#standard-library--isnan) Use `Number.isNaN` instead of global `isNaN`.
     eslint: [`no-restricted-globals`](https://eslint.org/docs/rules/no-restricted-globals)
 
+    > Why? 全局的`isNaN`强制非数值转换为数值，任何强制转换的NaN都会返回true。
     > Why? The global `isNaN` coerces non-numbers to numbers, returning true for anything that coerces to NaN.
-    > If this behavior is desired, make it explicit.
+    > 如果需要此行为，那么显式使用。/If this behavior is desired, make it explicit.
 
     ```javascript
     // bad 不推荐
@@ -3785,11 +3788,13 @@ Other Style Guides
     ```
 
   <a name="standard-library--isfinite"></a>
+  - [29.2](#standard-library--isfinite) 使用`Number.isFinite`替代全局的`isFinite`。
   - [29.2](#standard-library--isfinite) Use `Number.isFinite` instead of global `isFinite`.
     eslint: [`no-restricted-globals`](https://eslint.org/docs/rules/no-restricted-globals)
 
+    > Why? 全局的`isFinite`强制非数值转换为数值，任何强制转换的finite数值都会返回true。
     > Why? The global `isFinite` coerces non-numbers to numbers, returning true for anything that coerces to a finite number.
-    > If this behavior is desired, make it explicit.
+    > 如果需要此行为，那么显式使用。/ If this behavior is desired, make it explicit.
 
     ```javascript
     // bad 不推荐
@@ -3814,6 +3819,7 @@ Other Style Guides
     ```
 
   <a name="testing--for-real"></a><a name="28.2"></a>
+  - [30.2](#testing--for-real) **不是必须的，但很严肃**:
   - [30.2](#testing--for-real) **No, but seriously**:
     - Whichever testing framework you use, you should be writing tests!
     - Strive to write many small pure functions, and minimize where mutations occur.
@@ -3847,41 +3853,41 @@ Other Style Guides
   - [ES6 Compatibility Table](https://kangax.github.io/compat-table/es6/)
   - [Comprehensive Overview of ES6 Features](http://es6-features.org/)
 
-**Read This**
+**推荐阅读 / Read This**
 
   - [Standard ECMA-262](http://www.ecma-international.org/ecma-262/6.0/index.html)
 
-**Tools**
+**工具 / Tools**
 
   - Code Style Linters
     - [ESlint](https://eslint.org/) - [Airbnb Style .eslintrc](https://github.com/airbnb/javascript/blob/master/linters/.eslintrc)
     - [JSHint](http://jshint.com/) - [Airbnb Style .jshintrc](https://github.com/airbnb/javascript/blob/master/linters/.jshintrc)
   - Neutrino Preset - [@neutrinojs/airbnb](https://neutrinojs.org/packages/airbnb/)
 
-**Other Style Guides**
+**其他风格指南 / Other Style Guides**
 
-  - [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)
-  - [Google JavaScript Style Guide (Old)](https://google.github.io/styleguide/javascriptguide.xml)
-  - [jQuery Core Style Guidelines](https://contribute.jquery.org/style-guide/js/)
-  - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
+  - [Google JavaScript风格指南](https://google.github.io/styleguide/jsguide.html)
+  - [Google JavaScript风格指南 (Old)](https://google.github.io/styleguide/javascriptguide.xml)
+  - [jQuery 核心风格指南](https://contribute.jquery.org/style-guide/js/)
+  - [编写原则一致, 惯用的JavaScript / Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
   - [StandardJS](https://standardjs.com)
 
-**Other Styles**
+**其他风格 / Other Styles**
 
   - [Naming this in nested functions](https://gist.github.com/cjohansen/4135065) - Christian Johansen
   - [Conditional Callbacks](https://github.com/airbnb/javascript/issues/52) - Ross Allen
   - [Popular JavaScript Coding Conventions on GitHub](http://sideeffect.kr/popularconvention/#javascript) - JeongHoon Byun
   - [Multiple var statements in JavaScript, not superfluous](http://benalman.com/news/2012/05/multiple-var-statements-javascript/) - Ben Alman
 
-**Further Reading**
+**更多读物 / Further Reading**
 
-  - [Understanding JavaScript Closures](https://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/) - Angus Croll
-  - [Basic JavaScript for the impatient programmer](http://www.2ality.com/2013/06/basic-javascript.html) - Dr. Axel Rauschmayer
-  - [You Might Not Need jQuery](http://youmightnotneedjquery.com/) - Zack Bloom & Adam Schwartz
-  - [ES6 Features](https://github.com/lukehoban/es6features) - Luke Hoban
-  - [Frontend Guidelines](https://github.com/bendc/frontend-guidelines) - Benjamin De Cock
+  - [弄懂JavaScript关闭 / Understanding JavaScript Closures](https://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/) - Angus Croll
+  - [针对浮躁码农的基础JavaScript / Basic JavaScript for the impatient programmer](http://www.2ality.com/2013/06/basic-javascript.html) - Dr. Axel Rauschmayer
+  - [你可能不需要jQuery / You Might Not Need jQuery](http://youmightnotneedjquery.com/) - Zack Bloom & Adam Schwartz
+  - [ES6 功能 / ES6 Features](https://github.com/lukehoban/es6features) - Luke Hoban
+  - [前端指南 / Frontend Guidelines](https://github.com/bendc/frontend-guidelines) - Benjamin De Cock
 
-**Books**
+**书籍 / Books**
 
   - [JavaScript: The Good Parts](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) - Douglas Crockford
   - [JavaScript Patterns](https://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752) - Stoyan Stefanov
@@ -3900,7 +3906,7 @@ Other Style Guides
   - [Eloquent JavaScript](http://eloquentjavascript.net/) - Marijn Haverbeke
   - [You Don’t Know JS: ES6 & Beyond](http://shop.oreilly.com/product/0636920033769.do) - Kyle Simpson
 
-**Blogs**
+**博客 / Blogs**
 
   - [JavaScript Weekly](http://javascriptweekly.com/)
   - [JavaScript, JavaScript...](https://javascriptweblog.wordpress.com/)
