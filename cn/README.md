@@ -3657,6 +3657,7 @@ Other Style Guides
 ## jQuery
 
   <a name="jquery--dollar-prefix"></a><a name="25.1"></a>
+  - [26.1](#jquery--dollar-prefix) jQuery对象变量的前缀是`$`.
   - [26.1](#jquery--dollar-prefix) Prefix jQuery object variables with a `$`.
 
     ```javascript
@@ -3671,6 +3672,7 @@ Other Style Guides
     ```
 
   <a name="jquery--cache"></a><a name="25.2"></a>
+  - [26.2](#jquery--cache) 缓存jQuery查找项。
   - [26.2](#jquery--cache) Cache jQuery lookups.
 
     ```javascript
@@ -3699,9 +3701,11 @@ Other Style Guides
     ```
 
   <a name="jquery--queries"></a><a name="25.3"></a>
+  - [26.3](#jquery--queries) 对于DOM查询，请使用级联`$('.sidebar ul')`或 `$('.sidebar > ul') // 父元素 > 子元素`。 [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
   - [26.3](#jquery--queries) For DOM queries use Cascading `$('.sidebar ul')` or parent > child `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
 
   <a name="jquery--find"></a><a name="25.4"></a>
+  - [26.4](#jquery--find) 对于作用域的jQuery对象查询使用`find`。
   - [26.4](#jquery--find) Use `find` with scoped jQuery object queries.
 
     ```javascript
